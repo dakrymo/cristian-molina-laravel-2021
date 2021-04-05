@@ -24,9 +24,10 @@ class ProductoFactory extends Factory
         return [
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s'),
-            'codigo'            =>$this->faker->numberBetween(0000,9999),
-            'nombre'            =>$this->faker->nombre(),
-            'precio'            =>$this->faker->precio(),
+            'codigo'            =>$this ->faker->numberBetween(0000,9999),
+            'nombre'            =>$this -> nombre = 'ARROZ 500GR',
+            'precio'            =>$this -> precio = '1300'
+
         ];
     }
 }

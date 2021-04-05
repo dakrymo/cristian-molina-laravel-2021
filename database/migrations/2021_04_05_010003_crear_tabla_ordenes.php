@@ -19,7 +19,7 @@ class CrearTablaOrdenes extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('id_cliente');
             $table->unsignedBigInteger('id_producto');
-            $table->date('fecha');
+            $table->timestamp ('fecha');
             $table->foreign('id_cliente')->references('id')->on('clientes');
             $table->foreign('id_producto')->references('id')->on('productos');
         } );   

@@ -28,7 +28,7 @@ class OrdeneFactory extends Factory
             'updated_at'        => date('Y-m-d H:m:s'),
             'id_cliente'        => $this->faker->numberBetween(1,cliente::count()),
             'id_producto'       => $this->faker->numberBetween(1,producto::count()),
-            'fecha'             => $this->faker->dateTimeThisCentury()
+            'fecha'             => date('Y-m-d H:m:s'),
         ];
     }
 }
