@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\cliente;
+use App\Models\producto;
+use App\Models\ordene;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('testEcommerce', function () {
+    $cliente = cliente::where('cedula')->get();
+    dd($cliente);
 });

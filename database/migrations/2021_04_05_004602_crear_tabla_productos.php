@@ -18,8 +18,8 @@ class CrearTablaProductos extends Migration
             $table->id();
             $table->timestamps();
             $table->double('codigo')->unique();
-            $table->string('nombre');
-            $table->string('precio');
+            $table->string('nombre')->unique();
+            $table->bigInteger('precio');
         } );   
     }
 

@@ -17,9 +17,11 @@ class CrearTablaOrdenes extends Migration
             $table->charset ='utf8mb4';
             $table->id();
             $table->timestamps();
-            $table->double('id_cliente');
-            $table->double('id_producto');
+            $table->unsignedBigInteger('id_cliente');
+            $table->unsignedBigInteger('id_producto');
             $table->date('fecha');
+            $table->foreign('id_cliente')->references('id')->on('clientes');
+            $table->foreign('id_producto')->references('id')->on('productos');
         } );   
     }
 
@@ -30,6 +32,6 @@ class CrearTablaOrdenes extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('ordenes');
     }
 }
