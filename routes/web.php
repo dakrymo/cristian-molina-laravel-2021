@@ -95,11 +95,35 @@ Route::get('testEmpleados8', function () {
 
 
 Route::get('testEmpleados9', function () {
-    $empleados9 = Empleado::where('codigo',57624)->first();
+    $empleados9 = Empleado::where('codigo',57624)->get();
     dd($empleados9);
 });
 
 Route::get('testEmpleados9', function () {
     $empleados9 = Empleado::where('nombre','like','a%')->orderBy('nombre')->get();
     dd($empleados9);
+});
+
+Route::get('/empleado/{idEmpleado}', function ($idEmpleado = 1) {
+    $empleado = Empleado::where('id',$idEmpleado)->get();
+    dd($empleado);
+});
+
+Route::get('/empleado', function ($idEmpleado = 1) {
+    $empleado = Empleado::all();
+    dd($empleado);
+});
+
+/* Route::get('saludar/{nombre}', function ($nombre) {
+    return view ('hola')->with('nombre',$nombre);
+}); */
+
+Route::get('saludar/{idEmpleado}', function ($idEmpleado) {
+    $empleado = Empleado::where('id',$idEmpleado)->first();
+    return view ('hola')->with('empleado',$empleado);
+});
+
+Route::get('saludarEmpleados/{estado}', function ($estado) {
+    $empleados = Empleado::where('estado',$estado)->get();
+    return view ('hola',compact('empleados','estado'));
 });
