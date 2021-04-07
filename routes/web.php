@@ -17,10 +17,15 @@ use App\Models\ordene;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home');
 });
 
+Route::get('/contact', function () {
+    return view('pages.contact');
+});
+
+/* prueba consulta base de datos
 Route::get('testEcommerce', function () {
     $cliente = cliente::where('cedula')->get();
     dd($cliente);
-});
+}); */

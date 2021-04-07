@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Producto;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Generator as Faker;
 
 class ProductoFactory extends Factory
 {
@@ -24,9 +25,9 @@ class ProductoFactory extends Factory
         return [
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s'),
-            'codigo'            =>$this ->faker->numberBetween(0000,9999),
-            'nombre'            =>$this -> nombre = 'ARROZ 500GR',
-            'precio'            =>$this -> precio = '1300'
+            'codigo'            =>$this -> faker->numberBetween(0000,9999),
+            'nombre'            =>$this -> faker->deviceModelName(),
+            'precio'            =>$this -> faker->numberBetween(700000,2500000)
 
         ];
     }
