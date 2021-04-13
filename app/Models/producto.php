@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class producto extends Model
 {
     use HasFactory;
+
+    public function imagenes(){
+        return $this->hasMany((imagene::class));
+    }
 }

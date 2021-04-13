@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\imagenes;
+use App\Models\imagene;
 use Illuminate\Http\Request;
 
 class ImagenesController extends Controller
@@ -41,10 +41,10 @@ class ImagenesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\imagenes  $imagenes
+     * @param  \App\Models\imagene  $imagene
      * @return \Illuminate\Http\Response
      */
-    public function show(imagenes $imagenes)
+    public function show(imagene $imagene)
     {
         //
     }
@@ -52,10 +52,10 @@ class ImagenesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\imagenes  $imagenes
+     * @param  \App\Models\imagene  $imagene
      * @return \Illuminate\Http\Response
      */
-    public function edit(imagenes $imagenes)
+    public function edit(imagene $imagene)
     {
         //
     }
@@ -64,10 +64,10 @@ class ImagenesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\imagenes  $imagenes
+     * @param  \App\Models\imagene  $imagene
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, imagenes $imagenes)
+    public function update(Request $request, imagene $imagene)
     {
         //
     }
@@ -75,10 +75,10 @@ class ImagenesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\imagenes  $imagenes
+     * @param  \App\Models\imagene  $imagene
      * @return \Illuminate\Http\Response
      */
-    public function destroy(imagenes $imagenes)
+    public function destroy(imagene $imagene)
     {
         //
     }

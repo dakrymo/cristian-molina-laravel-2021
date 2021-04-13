@@ -2,7 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\imagenes;
+use App\Models\imagene;
+use App\Models\producto;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ImagenesFactory extends Factory
@@ -12,7 +13,7 @@ class ImagenesFactory extends Factory
      *
      * @var string
      */
-    protected $model = imagenes::class;
+    protected $model = imagene::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +23,10 @@ class ImagenesFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'created_at'        => date('Y-m-d H:m:s'),
+            'updated_at'        => date('Y-m-d H:m:s'),
+            'url'               => $this->faker->imageUrl(200,200),
+            'producto_id'       => $this->faker->numberBetween(1,producto::count())
         ];
     }
 }
