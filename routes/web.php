@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use App\Models\cliente;
 use App\Models\producto;
@@ -29,3 +30,5 @@ Route::get('testEcommerce', function () {
     $cliente = cliente::where('cedula')->get();
     dd($cliente);
 }); */
+
+Route::resource('productos',ProductoController::class);

@@ -20,6 +20,7 @@ class CrearTablaProductos extends Migration
             $table->double('codigo')->unique();
             $table->string('nombre')->unique();
             $table->bigInteger('precio');
+            $table->string('descripcion');
         } );   
     }
 

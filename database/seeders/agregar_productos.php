@@ -14,6 +14,6 @@ class agregar_productos extends Seeder
      */
     public function run()
     {
-        producto::factory()->count(1)->create();
+        producto::factory()->count(5)->create();
     }
 }
