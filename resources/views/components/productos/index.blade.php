@@ -47,63 +47,52 @@
           <!-- SHOP SIDEBAR-->
           <div class="col-lg-3 order-2 order-lg-1">
             <h5 class="text-uppercase mb-4">Marca</h5>
-            <div class="py-2 px-4 bg-dark text-white mb-3"><strong class="small text-uppercase font-weight-bold">Iphone</strong></div>
+            @foreach ($categorias as $categoria)
+            <div class="py-2 px-4 bg-dark text-white mb-3"><strong class="small text-uppercase font-weight-bold">{{$categoria->nombre}}</strong></div>
             <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal">
-              <li class="mb-2"><a class="reset-anchor" href="#">Women's T-Shirts</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Men's T-Shirts</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Dresses</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Novelty socks</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Women's sunglasses</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Men's sunglasses</a></li>
-            </ul>
+              <li class="mb-2"><a class="reset-anchor" href="#">{{$categoria->productos}}</a></li>
+            </ul>   
+            @endforeach
+            @foreach ($productos as $producto)
+            <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal">
+              <li class="mb-2"><a class="reset-anchor" href="#">{{$producto->nombre}}</a></li>
+            </ul>   
+            @endforeach
             <div class="py-2 px-4 bg-dark text-white mb-3"><strong class="small text-uppercase font-weight-bold">Samsung</strong></div>
             <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal">
               <li class="mb-2"><a class="reset-anchor" href="#">Shavers</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">bags</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Cosmetic</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Nail Art</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Skin Masks &amp; Peels</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Korean cosmetics</a></li>
             </ul>
             <div class="py-2 px-4 bg-dark text-white mb-3"><strong class="small text-uppercase font-weight-bold">Xiaomi</strong></div>
             <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal mb-5">
               <li class="mb-2"><a class="reset-anchor" href="#">Electronics</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">USB Flash drives</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Headphones</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Portable speakers</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Cell Phone bluetooth headsets</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Keyboards</a></li>
             </ul>
             <div class="py-2 px-4 bg-dark text-white mb-3"><strong class="small text-uppercase font-weight-bold">Motorola</strong></div>
             <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal mb-5">
               <li class="mb-2"><a class="reset-anchor" href="#">Electronics</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">USB Flash drives</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Headphones</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Portable speakers</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Cell Phone bluetooth headsets</a></li>
-              <li class="mb-2"><a class="reset-anchor" href="#">Keyboards</a></li>
             </ul>   
           </div>
           <!-- SHOP LISTING-->
           <div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0">
             <div class="row">
               <!-- PRODUCT-->
+              @foreach ($productos as $producto)
               <div class="col-lg-4 col-sm-6">
                 <div class="product text-center">
                   <div class="mb-3 position-relative">
-                    <div class="badge text-white badge-"></div><a class="d-block" href="detail.html"><img class="img-fluid w-100" src="img/product-1.jpg" alt="..."></a>
+                    <div class="badge text-white badge-"></div><a class="d-block" href="{{route('productos.show',['producto'=>$producto->id])}}"><img class="img-fluid w-100" src="https://via.placeholder.com/300x300.png/007722" alt="..."></a>
                     <div class="product-overlay">
                       <ul class="mb-0 list-inline">
                         <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="far fa-heart"></i></a></li>
-                        <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
+                        <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="cart.html">Agregar al carrito</a></li>
                         <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-toggle="modal"><i class="fas fa-expand"></i></a></li>
                       </ul>
                     </div>
                   </div>
-                  <h6> <a class="reset-anchor" href="detail.html">Kui Ye Chen’s AirPods</a></h6>
-                  <p class="small text-muted">$250</p>
+                  <h6> <a class="reset-anchor" href="detail.html">{{$producto->nombre}}</a></h6>
+                  <p class="small text-muted">${{$producto->precio}}</p>    
                 </div>
               </div>
+              @endforeach
           </div>
         </div>
       </div>

@@ -13,7 +13,9 @@ class agregar_productos extends Seeder
      * @return void
      */
     public function run()
-    {
-        producto::factory()->count(5)->create();
+    {        
+        producto::factory()->times(5)->create([
+            'categoria_id'            => '1'
+        ]);
     }
 }

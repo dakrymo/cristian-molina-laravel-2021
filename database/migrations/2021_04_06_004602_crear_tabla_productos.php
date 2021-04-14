@@ -21,6 +21,9 @@ class CrearTablaProductos extends Migration
             $table->string('nombre')->unique();
             $table->bigInteger('precio');
             $table->string('descripcion');
+            $table->string('Tag');
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
         } );   
     }
 

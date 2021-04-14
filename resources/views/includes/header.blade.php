@@ -7,7 +7,7 @@
           <!-- Link--><a class="nav-link active" href="http://localhost/laravel/ecommerce/public/">Inicio</a>
         </li>
         <li class="nav-item">
-          <!-- Link--><a class="nav-link" href="shop.html">Productos</a>
+          <!-- Link--><a class="nav-link" href="http://localhost/laravel/ecommerce/public/productos">Productos</a>
         </li>
         <li class="nav-item">
           <!-- Link--><a class="nav-link" href="detail.html">Product detail</a>

@@ -4,31 +4,33 @@
   <head>
     @include("includes.head")
   </head>
-  <body>
-    
-    <header class="header bg-white">
+  <header class="header bg-white">
     @include("includes.header")
 </header>
+
+<body>
+    
+
 
 <main>
 
     @yield('content')
+
+</main>
   <!-- FOOTER -->
   <footer class="bg-dark text-white">
     @include("includes.footer")
  </footer>
-</main>
-
 
     <!-- JavaScript files-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../vendor/lightbox2/js/lightbox.min.js"></script>
-    <script src="../vendor/nouislider/nouislider.min.js"></script>
-    <script src="../vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-    <script src="../vendor/owl.carousel2/owl.carousel.min.js"></script>
-    <script src="../vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
-    <script src="../resources/js/front.js"></script>
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('vendor/lightbox2/js/lightbox.min.js')}}"></script>
+    <script src="{{asset('vendor/nouislider/nouislider.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap-select/js/bootstrap-select.min.js')}}"></script>
+    <script src="{{asset('vendor/owl.carousel2/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js')}}"></script>
+    <script src="{{asset('js/front.js')}}"></script>
     <script>
       // ------------------------------------------------------- //
       //   Inject SVG Sprite - 
