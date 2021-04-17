@@ -3,10 +3,10 @@
 namespace Database\Factories;
 
 use App\Models\imagene;
-use App\Models\producto;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\producto;
 
-class ImagenesFactory extends Factory
+class ImageneFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.

@@ -42,12 +42,12 @@
       </div>
       <!-- HERO SECTION-->
       <div class="container">
-        <section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(https://via.placeholder.com/1110x480.png/007722)">
+        <section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(https://www.apple.com/v/iphone/home/aw/images/meta/iphone__dgs666g2ou82_og.png">
           <div class="container py-5">
             <div class="row px-4 px-lg-5">
               <div class="col-lg-6">
                 <p class="text-muted small text-uppercase mb-2">Nuevos equipos</p>
-                <h1 class="h2 text-uppercase mb-3">20% de descuento en Iphone</h1><a class="btn btn-dark" href="http://localhost/laravel/ecommerce/public/productos">Mira nuestros equipos</a>
+                <h1 class="h2 text-uppercase mb-3">20% de descuento en Iphone</h1><a class="btn btn-dark" href="{{route('productos.index')}}">Mira nuestros equipos</a>
               </div>
             </div>
           </div>
@@ -59,9 +59,10 @@
             <h2 class="h5 text-uppercase mb-4">Explore nuestras categorías</h2>
           </header>
           <div class="row">
-            <div class="col-md-4 mb-4 mb-md-0"><a class="category-item" href="shop.html"><img class="img-fluid" src="https://via.placeholder.com/350x490.png/" alt=""><strong class="category-item-title">Iphone</strong></a></div>
-            <div class="col-md-4 mb-4 mb-md-0"><a class="category-item mb-4" href="shop.html"><img class="img-fluid" src="https://via.placeholder.com/350x233.png/" alt=""><strong class="category-item-title">Samsung</strong></a><a class="category-item" href="shop.html"><img class="img-fluid" src="https://via.placeholder.com/350x233.png/" alt=""><strong class="category-item-title">Xiaomi</strong></a></div>
-            <div class="col-md-4"><a class="category-item" href="shop.html"><img class="img-fluid" src="https://via.placeholder.com/350x490.png/" alt=""><strong class="category-item-title">Motorola</strong></a></div>
+            <div class="col-md-4 mb-4 mb-md-0"><a class="category-item" href="{{route('productos.index')}}"><img class="img-fluid" src="https://images-na.ssl-images-amazon.com/images/I/71xn9bCRfhL._AC_SX522_.jpg" alt=""><strong class="category-item-title">Iphone</strong></a></div>
+            <div class="col-md-4 mb-4 mb-md-0"><a class="category-item mb-4" href="{{route('productos.index')}}"><img class="img-fluid" src="https://www.notebookcheck.org/fileadmin/Notebooks/Samsung/Galaxy_A20s/IMG_20201107_100432.jpg" alt=""><strong class="category-item-title">Samsung</strong></a>
+              <a class="category-item" href="{{route('productos.index')}}"><img class="img-fluid" src="https://www.notebookcheck.org/fileadmin/Notebooks/Xiaomi/Mi_10T_Pro_5G/4_to_3_Teaser_Xiaomi_Mi_10T_Pro.jpg" alt=""><strong class="category-item-title">Xiaomi</strong></a></div>
+            <div class="col-md-4"><a class="category-item" href="{{route('productos.index')}}"><img class="img-fluid" src="https://images-na.ssl-images-amazon.com/images/I/91QeBBPsElL._AC_SX569_.jpg" alt=""><strong class="category-item-title">Motorola</strong></a></div>
           </div>
         </section>
 

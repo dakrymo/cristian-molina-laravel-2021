@@ -17,10 +17,13 @@ class CrearTablaOrdenes extends Migration
             $table->charset ='utf8mb4';
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('cliente_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('producto_id');
+            $table->double('cedula');
+            $table->bigInteger('telefono');
+            $table->string('direccion');
             $table->timestamp ('fecha');
-            $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('producto_id')->references('id')->on('productos');
         } );   
     }

@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class cliente extends Model
+class categoria extends Model
 {
     use HasFactory;
 
-    public function productos(){
-        return $this->belongsToMany((producto::class));
+    public function producto(){
+        return $this->hasMany(producto::class);
     }
+
 }

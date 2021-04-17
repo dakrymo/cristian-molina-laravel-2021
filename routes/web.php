@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductoController;
+use App\Models\categoria;
 use Illuminate\Support\Facades\Route;
 use App\Models\cliente;
 use App\Models\producto;
@@ -27,8 +28,8 @@ Route::get('/contact', function () {
 
 /* prueba consulta base de datos
 Route::get('testEcommerce', function () {
-    $cliente = cliente::where('cedula')->get();
-    dd($cliente);
+    $producto = producto::find(2);
+    dd($producto->categoria);
 }); */
 
 Route::resource('productos',ProductoController::class);

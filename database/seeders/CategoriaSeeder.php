@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\categorias;
+use App\Models\categoria;
 use Illuminate\Database\Seeder;
 
-class CategoriasSeeder extends Seeder
+class CategoriaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,19 +14,19 @@ class CategoriasSeeder extends Seeder
      */
     public function run()
     {
-        categorias::factory()->times(1)->create([
+        categoria::factory()->times(1)->create([
             'nombre'            => 'Iphone'
         ]);
 
-        categorias::factory()->times(1)->create([
+        categoria::factory()->times(1)->create([
             'nombre'            => 'Motorola'
         ]);
 
-        categorias::factory()->times(1)->create([
+        categoria::factory()->times(1)->create([
             'nombre'            => 'Xiaomi'
         ]);
 
-        categorias::factory()->times(1)->create([
+        categoria::factory()->times(1)->create([
             'nombre'            => 'Samsung'
         ]);
     }

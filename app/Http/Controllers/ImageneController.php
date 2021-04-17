@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\categoria;
-use App\Models\producto;
+use App\Models\imagene;
 use Illuminate\Http\Request;
 
-class ProductoController extends Controller
+class ImageneController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('components.productos.index',['productos' => producto::all()],['categorias' => categoria::all()]);
+        //
     }
 
     /**
@@ -42,21 +41,21 @@ class ProductoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\producto  $producto
+     * @param  \App\Models\imagene  $imagene
      * @return \Illuminate\Http\Response
      */
-    public function show(producto $producto)
+    public function show(imagene $imagene)
     {
-        return view('components.productos.show',['productos'=> $producto] );
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\producto  $producto
+     * @param  \App\Models\imagene  $imagene
      * @return \Illuminate\Http\Response
      */
-    public function edit(producto $producto)
+    public function edit(imagene $imagene)
     {
         //
     }
@@ -65,10 +64,10 @@ class ProductoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\producto  $producto
+     * @param  \App\Models\imagene  $imagene
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, producto $producto)
+    public function update(Request $request, imagene $imagene)
     {
         //
     }
@@ -76,10 +75,10 @@ class ProductoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\producto  $producto
+     * @param  \App\Models\imagene  $imagene
      * @return \Illuminate\Http\Response
      */
-    public function destroy(producto $producto)
+    public function destroy(imagene $imagene)
     {
         //
     }

@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         $this -> call ('agregar_clientes'::class);
         $this -> call ('agregar_ordenes'::class);
         $this -> call ('agregar_productos'::class);
-        $this -> call ('ImagenesSeeder'::class);
-        $this -> call ('FotoSeeder'::class);
+        $this -> call ('ImageneSeeder'::class);
+        $this -> call ('CategoriaSeeder'::class);
     }
 }

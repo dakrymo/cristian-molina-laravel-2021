@@ -9,16 +9,16 @@ class producto extends Model
 {
     use HasFactory;
 
-    public function categorias(){
-        return $this->belongsTo((categorias::class));
+    public function categoria(){
+        return $this->belongsTo(categoria::class);
     }
 
-    public function imagenes(){
-        return $this->hasMany((imagene::class));
+    public function imagene(){
+        return $this->hasMany(imagene::class);
     }
 
     public function cliente(){
-        return $this->belongsToMany((cliente::class));
+        return $this->belongsToMany(cliente::class);
     }
 }
 

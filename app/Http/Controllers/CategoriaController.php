@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\categoria;
-use App\Models\producto;
 use Illuminate\Http\Request;
 
-class ProductoController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('components.productos.index',['productos' => producto::all()],['categorias' => categoria::all()]);
+        //
     }
 
     /**
@@ -42,21 +41,21 @@ class ProductoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\producto  $producto
+     * @param  \App\Models\categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function show(producto $producto)
+    public function show(categoria $categoria)
     {
-        return view('components.productos.show',['productos'=> $producto] );
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\producto  $producto
+     * @param  \App\Models\categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function edit(producto $producto)
+    public function edit(categoria $categoria)
     {
         //
     }
@@ -65,10 +64,10 @@ class ProductoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\producto  $producto
+     * @param  \App\Models\categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, producto $producto)
+    public function update(Request $request, categoria $categoria)
     {
         //
     }
@@ -76,10 +75,10 @@ class ProductoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\producto  $producto
+     * @param  \App\Models\categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(producto $producto)
+    public function destroy(categoria $categoria)
     {
         //
     }
