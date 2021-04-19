@@ -16,13 +16,25 @@ class CarritoController extends Controller
     {
 
         if (session()->has('carrito') == false) {
-            // agregar un flash para avisar q no hay productos en el carrito
             return redirect('productos.index');
         } else {
 
             $productos = session()->get('carrito.productos');
             return view('components/carrito.index', compact('productos'));
         }
+    }
+
+    public function indiceProductoEnCarrito($productosActuales, $productoSeleccionado)
+    {
+        $encontrado = -1;
+        foreach ($productosActuales as $index => $producto) {
+            if ($producto['producto']->id ==  $productoSeleccionado->id) {
+                $encontrado = $index;
+                break;
+            }
+        }
+
+        return $encontrado;
     }
     /**
      * Show the form for creating a new resource.
@@ -44,30 +56,30 @@ class CarritoController extends Controller
     {
         $productoSeleccionado = producto::find($request->producto);
         $cantidad = $request->cantidad;
+
         if ($request->session()->has('carrito') == false) {
             $request->session()->put('carrito', ['productos' => []]);
         }
-        $request->session()->push('carrito.productos', ['producto' => $productoSeleccionado, 'cantidad' => $cantidad]);
-        return redirect()->route('productos.index');
+
 
 
 
         //validacion de productos en el carrito
 
         $productosActuales = $request->session()->get('carrito.productos');
+        $productoEncontrado = $this->indiceProductoEnCarrito($productosActuales, $productoSeleccionado);
 
-        if (count($productosActuales)>0){
-            foreach ($productosActuales as $index => $producto) {
-                if ($producto['producto']->id == $productoSeleccionado->id) {
-                    $productosActuales[$index]['cantidad'] += $cantidad;
-                    $request->session()->put('carrito.productos',$productosActuales);
-                } else {
-                    $request->session()->push('carrito.productos', ['producto' => $productoSeleccionado, 'cantidad' => $cantidad]);
-                }
-            }
-        }else{
+        if ($productoEncontrado != -1) {
+            $productosActuales[$productoEncontrado]['cantidad'] += $cantidad;
+            $request->session()->put('carrito.productos', $productosActuales);
+
+            //unset
+        } else {
             $request->session()->push('carrito.productos', ['producto' => $productoSeleccionado, 'cantidad' => $cantidad]);
+
         }
+
+        return redirect()->route('productos.index');
         
     }
 

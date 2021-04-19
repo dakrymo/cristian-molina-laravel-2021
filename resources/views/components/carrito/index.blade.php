@@ -33,7 +33,7 @@
                                 </div>
                             </th>
                             <td class="align-middle border-0">
-                                <p class="mb-0 small">{{$producto['producto']->precio}}</p>
+                                <p class="mb-0 small">${{$producto['producto']->precio}}</p>
                             </td>
                             <td class="align-middle border-0">
                                 <div class="border d-flex align-items-center justify-content-between px-3"><span
@@ -47,7 +47,7 @@
                                 </div>
                             </td>
                             <td class="align-middle border-0">
-                                <p class="mb-0 small">{{$producto['cantidad'] * $producto['producto']->precio}}</p>
+                                <p class="mb-0 small">${{$producto['cantidad'] * $producto['producto']->precio}}</p>
                             </td>
                             <td class="align-middle border-0"><a class="reset-anchor" href="#"><i
                                         class="fas fa-trash-alt small text-muted"></i></a></td>
