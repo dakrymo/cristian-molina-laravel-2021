@@ -29,8 +29,8 @@
               @else
               https://via.placeholder.com/300
               @endif
+            </div>
           </div>
-        </div>
         </div>
       </div>
       <!-- PRODUCT DETAILS-->
@@ -38,32 +38,36 @@
         <h1>{{$productos->nombre}}</h1>
         <p class="text-muted lead">${{$productos->precio}}</p>
         <p class="text-small mb-4">{{$productos->descripcion}}</p>
-        <div class="row align-items-stretch mb-4">
-          <div class="col-sm-5 pr-sm-0">
-            <div class="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white"><span
-                class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
-              <div class="quantity">
-                <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
-                <input class="form-control border-0 shadow-0 p-0" type="text" value="1">
-                <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
+        <form method="POST" action="{{ route('carrito.store') }}">
+          @csrf
+          <div class="row align-items-stretch mb-4">
+            <div class="col-sm-5 pr-sm-0">
+              <div class="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white">
+                <span class="small text-uppercase text-gray mr-4 no-select">Cantidad</span>
+                <div class="quantity">
+                  <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
+                  <input name='cantidad' class="form-control border-0 shadow-0 p-0" type="text" value="1">
+                  <input name='producto' class="form-control border-0 shadow-0 p-0" type="hidden" value="{{$productos->id}}">
+                  <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-3 pl-sm-0"><a
-              class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0"
-              href="cart.html">Add to cart</a></div>
-        </div><a class="btn btn-link text-dark p-0 mb-4" href="#"><i class="far fa-heart mr-2"></i>Add to wish
-          list</a><br>
-        <ul class="list-unstyled small d-inline-block">
-          <li class="px-3 py-2 mb-1 bg-white"><strong class="text-uppercase">SKU:</strong><span
-              class="ml-2 text-muted">{{$productos->codigo}}</span></li>
-          <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Category:</strong><a
-              class="reset-anchor ml-2" href="#">{{$productos->categoria_id}}</a></li>
-          <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Tags:</strong><a
-              class="reset-anchor ml-2" href="#">{{$productos->Tag}}</a></li>
-        </ul>
-      </div>
+            <div class="col-sm-3 pl-sm-0"><input value="Agregar al carrito" type="submit"
+                class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" />
+            </div>
+        </form>
+      </div><a class="btn btn-link text-dark p-0 mb-4" href=""><i class="far fa-heart mr-2"></i>Agregar a la lista de
+        deseos</a><br>
+      <ul class="list-unstyled small d-inline-block">
+        <li class="px-3 py-2 mb-1 bg-white"><strong class="text-uppercase">SKU:</strong><span
+            class="ml-2 text-muted">{{$productos->codigo}}</span></li>
+        <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Category:</strong><a
+            class="reset-anchor ml-2" href="#">{{$productos->categoria_id}}</a></li>
+        <li class="px-3 py-2 mb-1 bg-white text-muted"><strong class="text-uppercase text-dark">Tags:</strong><a
+            class="reset-anchor ml-2" href="#">{{$productos->Tag}}</a></li>
+      </ul>
     </div>
+  </div>
   </div>
 </section>
 

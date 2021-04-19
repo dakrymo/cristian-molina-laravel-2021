@@ -19,6 +19,7 @@ class CrearTablaOrdenes extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('producto_id');
+            $table->bigInteger('cantidad');
             $table->double('cedula');
             $table->bigInteger('telefono');
             $table->string('direccion');

@@ -7,17 +7,20 @@
           <!-- Link--><a class="nav-link active" href="http://localhost/laravel/ecommerce/public/">Inicio</a>
         </li>
         <li class="nav-item">
-          <!-- Link--><a class="nav-link" href="http://localhost/laravel/ecommerce/public/productos">Productos</a>
+          <!-- Link--><a class="nav-link" href="{{route('productos.index')}}">Productos</a>
         </li>
-        <li class="nav-item">
-          <!-- Link--><a class="nav-link" href="detail.html">Product detail</a>
-        </li>
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paginas</a>
+{{--         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paginas</a>
           <div class="dropdown-menu mt-3" aria-labelledby="pagesDropdown"><a class="dropdown-item border-0 transition-link" href="index.html">Inicio</a><a class="dropdown-item border-0 transition-link" href="shop.html">Category</a><a class="dropdown-item border-0 transition-link" href="detail.html">Product detail</a><a class="dropdown-item border-0 transition-link" href="cart.html">Shopping cart</a><a class="dropdown-item border-0 transition-link" href="checkout.html">Checkout</a></div>
-        </li>
+        </li> --}}
       </ul>
       <ul class="navbar-nav ml-auto">               
-        <li class="nav-item"><a class="nav-link" href="cart.html"> <i class="fas fa-dolly-flatbed mr-1 text-gray"></i>Carrito<small class="text-gray">(2)</small></a></li>
+        <li class="nav-item"><a class="nav-link" href="{{route('carrito.index')}}"> <i class="fas fa-dolly-flatbed mr-1 text-gray"></i>Carrito<small class="text-gray">(
+        @if (session()->has('carrito.productos'))
+          {{count(session()->get('carrito.productos'))}}
+        @else
+          0  
+        @endif 
+        )</small></a></li>
         <li class="nav-item"><a class="nav-link" href="#"> <i class="far fa-heart mr-1"></i><small class="text-gray"> (0)</small></a></li>
         <li class="nav-item"><a class="nav-link" href="#"> <i class="fas fa-user-alt mr-1 text-gray"></i>Login</a></li>
       </ul>

@@ -1,11 +1,8 @@
 <?php
 
+use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\ProductoController;
-use App\Models\categoria;
 use Illuminate\Support\Facades\Route;
-use App\Models\cliente;
-use App\Models\producto;
-use App\Models\ordene;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +19,12 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 Route::get('/contact', function () {
     return view('pages.contact');
 });
@@ -33,3 +36,4 @@ Route::get('testEcommerce', function () {
 }); */
 
 Route::resource('productos',ProductoController::class);
+Route::resource('carrito',CarritoController::class);
